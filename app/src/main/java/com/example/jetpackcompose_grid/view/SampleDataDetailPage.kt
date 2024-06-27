@@ -14,8 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackcompose_grid.R
@@ -29,6 +31,9 @@ fun SampleDataDetailPage(data: SampleDataClass) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+
+        Spacer(modifier = Modifier.padding(25.dp))
+
         Image(
             painterResource(R.drawable.jetpack),
             contentDescription = "Photo",
@@ -37,18 +42,25 @@ fun SampleDataDetailPage(data: SampleDataClass) {
                 .height(400.dp)
                 .clip(RoundedCornerShape(25.dp))
         )
+
         Spacer(modifier = Modifier.padding(5.dp))
+
         Text(
             text = data.name,
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            fontSize = 35.sp,
+            fontSize = 55.sp,
             fontWeight = FontWeight.ExtraBold,
         )
-        Spacer(modifier = Modifier.padding(2.dp))
+
+        Spacer(modifier = Modifier.padding(5.dp))
+
         Text(
             text = data.description,
             fontSize = 25.sp,
-            fontWeight = FontWeight.W400,
+            fontWeight = FontWeight.W500,
+            textAlign = TextAlign.Center,
+            lineHeight = 35.sp,
+            color = Color.DarkGray
         )
     }
 }
